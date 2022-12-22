@@ -17,6 +17,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools:2.7.6'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	/* h2 데이터베이스 */
+//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
 }
 
 tasks.named('test') {
