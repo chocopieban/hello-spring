@@ -20,18 +20,9 @@ public class MemberService {
      * 회원가입
      */
     public Long join(Member member) {
-
-        long start = System.currentTimeMillis();
-
-        try {
-            validateDuplicateMember(member); // 중복 회원 검증
-            memberRepository.save(member);
-            return member.getId();
-        } finally {
-
-        }
-
-
+        validateDuplicateMember(member); // 중복 회원 검증
+        memberRepository.save(member);
+        return member.getId();
     }
 
     private void validateDuplicateMember(Member member) {
