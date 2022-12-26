@@ -21,9 +21,17 @@ public class MemberService {
      */
     public Long join(Member member) {
 
-        validateDuplicateMember(member); // 중복 회원 검증
-        memberRepository.save(member);
-        return member.getId();
+        long start = System.currentTimeMillis();
+
+        try {
+            validateDuplicateMember(member); // 중복 회원 검증
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+
+        }
+
+
     }
 
     private void validateDuplicateMember(Member member) {
